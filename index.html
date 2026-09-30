@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe | VOSC Activity-1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MODE SELECTION SCREEN -->
+    <div class="screen" id="modeScreen">
+        <div class="mode-container">
+            <div class="logo">⭕❌</div>
+            <h1>Tic-Tac-Toe</h1>
+            <p class="subtitle">VOSC Activity-1</p>
+            <p class="choose-text">Choose how you want to play</p>
+
+            <div class="mode-options">
+                <button class="mode-card robot" onclick="startGame('robot')">
+                    <span class="mode-icon">🤖</span>
+                    <span class="mode-title">Play with Robot</span>
+                    <span class="mode-description">Challenge the computer</span>
+                </button>
+
+                <button class="mode-card friends" onclick="startGame('friends')">
+                    <span class="mode-icon">👥</span>
+                    <span class="mode-title">Play with Friends</span>
+                    <span class="mode-description">Play with another person</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div class="game-container hidden" id="gameScreen">
+        <button class="back-button" onclick="goBack()">← Back</button>
+
+        <h1>Tic-Tac-Toe</h1>
+        <p class="subtitle" id="gameModeText">Play with Friends</p>
+
+        <div class="score-board">
+            <div class="score">
+                <span>Player X</span>
+                <strong id="scoreX">0</strong>
+            </div>
+
+            <div class="score">
+                <span>Draws</span>
+                <strong id="drawScore">0</strong>
+            </div>
+
+            <div class="score">
+                <span id="playerOLabel">Player O</span>
+                <strong id="scoreO">0</strong>
+            </div>
+        </div>
+
+        <p id="status">Player X's Turn</p>
+
+        <div class="board">
+            <button class="cell" data-index="0"></button>
+            <button class="cell" data-index="1"></button>
+            <button class="cell" data-index="2"></button>
+            <button class="cell" data-index="3"></button>
+            <button class="cell" data-index="4"></button>
+            <button class="cell" data-index="5"></button>
+            <button class="cell" data-index="6"></button>
+            <button class="cell" data-index="7"></button>
+            <button class="cell" data-index="8"></button>
+        </div>
+
+        <button id="newGame">New Game</button>
+
+        <p class="instruction">Get three symbols in a row to win!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* MODE SCREEN */
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.mode-container {
+    width: 700px;
+    max-width: 95%;
+    background: white;
+    padding: 45px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+.logo {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.mode-container h1 {
+    font-size: 44px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.choose-text {
+    font-size: 18px;
+    color: #555;
+    margin: 25px 0;
+}
+
+.mode-options {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+}
+
+.mode-card {
+    flex: 1;
+    min-height: 210px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    background: #fafafa;
+    cursor: pointer;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+}
+
+.mode-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.mode-card.robot:hover {
+    border-color: #667eea;
+    background: #f4f5ff;
+}
+
+.mode-card.friends:hover {
+    border-color: #e11d48;
+    background: #fff4f6;
+}
+
+.mode-icon {
+    font-size: 58px;
+    margin-bottom: 15px;
+}
+
+.mode-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+}
+
+.mode-description {
+    margin-top: 8px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* GAME */
+
+.game-container {
+    position: relative;
+    width: 380px;
+    max-width: 92%;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 18px;
+    border: none;
+    background: transparent;
+    color: #667eea;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.game-container h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.score {
+    width: 30%;
+    padding: 10px;
+    background: #f3f3f3;
+    border-radius: 10px;
+}
+
+.score span {
+    display: block;
+    font-size: 13px;
+}
+
+.score strong {
+    display: block;
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+#status {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    height: 90px;
+    border: none;
+    border-radius: 12px;
+    background: #f0f0f0;
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cell:hover {
+    background: #e1e1e1;
+    transform: scale(1.03);
+}
+
+.cell.x {
+    color: #4f46e5;
+}
+
+.cell.o {
+    color: #e11d48;
+}
+
+.cell.winner {
+    background: #90ee90;
+}
+
+#newGame {
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    background: #667eea;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#newGame:hover {
+    background: #4f5fd0;
+}
+
+.instruction {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    .mode-container {
+        padding: 30px 20px;
+    }
+
+    .mode-container h1 {
+        font-size: 35px;
+    }
+
+    .mode-options {
+        flex-direction: column;
+    }
+
+    .mode-card {
+        min-height: 170px;
+    }
+}
+
+@media (max-width: 400px) {
+    .game-container {
+        padding: 20px;
+    }
+
+    .game-container h1 {
+        font-size: 30px;
+    }
+
+    .cell {
+        height: 75px;
+        font-size: 35px;
+    }
+}
